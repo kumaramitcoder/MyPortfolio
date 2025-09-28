@@ -61,7 +61,7 @@ const Contact = () => {
           const data = response.data;
           if (data.success) {
             setSuccessMessage(data.message);
-            setFormData({ name: "", email: "", message: "" }); // Clear form fields
+            setFormData({ name: "", email: "", message: "" }); // Clear form fields Amit Kumar
             setOpenSnackbar(true); // Open Snackbar
           } else {
             setErrorMessage(data.message);
