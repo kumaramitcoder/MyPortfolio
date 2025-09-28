@@ -1,0 +1,237 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Shubham Kumar Maddheshiya} \\[7.5pt]
+\href{https://github.com/shubhamMadheshiya}{\raisebox{-0.05\height}\faGithub\ shubhamMadheshiya} \ $|$ \ 
+\href{https://www.linkedin.com/in/shubham-maddheshiya07}{\raisebox{-0.05\height}\faLinkedin\ shubham-maddheshiya07} \ $|$ \ 
+% \href{https://shubham-kumar-maddheshiya.onrender.com}{\raisebox{-0.05\height}\faGlobe \ shubham-kumar-maddheshiya.onrender.com} \ $|$ \ 
+\href{mailto:kr.shubhamgupta1999@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ kr.shubhamgupta1999@gmail.com} \ $|$ \ 
+\href{tel:+919670653925}{\raisebox{-0.05\height}\faMobile \ 9670653925} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Full-stack software engineer with MERN expertise, skilled in front-end and back-end development. Experienced in Product Design and DevOps, with a proven record of delivering end-to-end product solutions that enhance user experience. 
+
+%Skills
+\section{Skills}
+\begin{itemize}
+    \item \textbf{Programming languages:} Java Script, Java
+    \item \textbf{Database:} MongoDB 
+    \item \textbf{Web Technologies:} Next.Js, React.Js, ExpressJS, Nodejs, Redux Toolkit, RTK Query.
+    \item \textbf{DevOps:}  Docker, Kubernetes, CI/CD pipelines, Vagrant and Linux Server, AWS, Ansible, Terraform.
+\end{itemize}
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Backend Developer at \href{https://anytru.com}{AnyTru (Freelance)}} & \hfill May 2024 - Present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+      \item[--] Created 110+ REST APIs using Node.js, Express.js, MongoDB, and Mongoose, implementing features error handling, pagination, filtering, and sorting.
+        \item[--] Google Facebook authentication using Passport.js, automated credential export to Mailchimp, S3 for scalable storage.
+        \item[--] Integrated Razorpay for transactions, configured Mailgun for email services, added chat features for real-time interaction.
+        \item[--] Optimized code for performance and improved API security to ensure secure and efficient operations.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{ FullStack Developer and Product Design \href{https://www.viabletrips.in}{ViableTrips (Freelance)}} & \hfill Jan 2024 - May 2024\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Designed wireframes and strategic plans, crafted visually appealing UIs using Figma, and iterated prototypes based on user feedback and usability testing.
+          \item[--] Implemented an AI chatbot for enhanced customer interaction and support, and developed an AI trip itinerary planner to automate travel planning and improve user experience.
+        \item[--] Frontend development using React.js, MUI; Redux Toolkit for state management and RTK Query for API interactions.
+        \item[--] Developed 98+ REST APIs with Node.js, Express.js, MongoDB, and Mongoose; integrated Stripe for payments and Twilio for OTP authentication, while optimizing performance and ensuring API security.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{ FullStack Developer \href{https://www.shashanksajwan.com}{Shashank Sajwan (Freelance)}} & \hfill Oct 2023 - Mar 2024\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+          \item[--]  Developed frontend using React, MUI, engineered backend  with Node.js, Express for server-side logic and APIs.
+        \item[--] Managed databases with MongoDB and Mongoose, implemented AES 256-bit encryption for data at rest, utilized SSL with TLS for secure video streaming, and deployed applications using Firebase and AWS.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Tomato - Food Delivery } & \hfill May 2022 - Jun 2022\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \href{https://tommato.onrender.com}{Link to Demo} \hfill \href{https://github.com/shubhamMadheshiya/food-del}{Code Link}
+} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Built with React and MUI,  Redux Toolkit, RTK Query for API calls. JWT and refresh tokens for authentication.
+        \item[--]  Developed backend with Node.js, Express.js, MongoDB, and Mongoose. Integrated WebSocket for real-time updates, Stripe for payments, and used Mailchimp and Mailgun for email marketing and notifications.
+    \end{itemize}
+    \end{minipage}
+} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Join - Realtime Chat} & \hfill Dec 2021 - Jan 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \href{https://join-dg43.onrender.com}{Link to Demo} \hfill \href{https://github.com/shubhamMadheshiya/join-Web_App}{Code Link}
+} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Built with React and Chakra UI, featuring one-on-one/group chat, typing indicators, media sharing, Redux for state management, and real-time updates using Socket.io and WebSocket. Secured with end-to-end encryption and JWT.
+        \item[--]  Developed with Node.js, Express.js, MongoDB, and Mongoose. Used Axios for API requests and deployed on Render.
+    \end{itemize}
+    \end{minipage}
+} \\
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+2019 - 2023 & Bachelor of Technology at  \textbf{Madan Mohan Malaviya University Of Technology} \hfill (CGPA: 7.41/10.0) \\ 
+
+\end{tabularx}
+
+
+
+\vfill
+\center{\footnotesize \href{https://shubham-kumar-maddheshiya.onrender.com}{\raisebox{-0.05\height}\faGlobe \ shubham-kumar-maddheshiya.onrender.com} \ \ }
+\end{document}
